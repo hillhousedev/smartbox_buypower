@@ -1,0 +1,2 @@
+class Viewtester < ApplicationRecord
+end

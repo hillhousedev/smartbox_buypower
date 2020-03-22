@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @auto_load_device.name %>
+</p>
+
+<p>
+  <strong>Meter type:</strong>
+  <%= @auto_load_device.meter_type %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @auto_load_device.address %>
+</p>
+
+<p>
+  <strong>Phone no:</strong>
+  <%= @auto_load_device.phone_no %>
+</p>
+
+<p>
+  <strong>Meter:</strong>
+  <%= @auto_load_device.meter_id %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @auto_load_device.token %>
+</p>
+
+<%= link_to 'Edit', edit_auto_load_device_path(@auto_load_device) %> |
+<%= link_to 'Back', auto_load_devices_path %>

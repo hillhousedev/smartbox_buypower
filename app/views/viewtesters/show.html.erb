@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @viewtester.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @viewtester.age %>
+</p>
+
+<%= link_to 'Edit', edit_viewtester_path(@viewtester) %> |
+<%= link_to 'Back', viewtesters_path %>

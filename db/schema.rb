@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609220802) do
+ActiveRecord::Schema.define(version: 20200322212431) do
+
+  create_table "auto_load_devices", force: :cascade do |t|
+    t.string "name"
+    t.string "meter_type"
+    t.string "address"
+    t.string "phone_no"
+    t.string "meter_id"
+    t.integer "token_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token_id"], name: "index_auto_load_devices_on_token_id"
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text "content"
@@ -31,6 +43,13 @@ ActiveRecord::Schema.define(version: 20160609220802) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "tokens", force: :cascade do |t|
+    t.string "amount"
+    t.string "toks"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -45,6 +64,13 @@ ActiveRecord::Schema.define(version: 20160609220802) do
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "viewtesters", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

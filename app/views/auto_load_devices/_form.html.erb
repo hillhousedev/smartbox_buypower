@@ -1,0 +1,47 @@
+<%= form_with(model: auto_load_device, local: true) do |form| %>
+  <% if auto_load_device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(auto_load_device.errors.count, "error") %> prohibited this auto_load_device from being saved:</h2>
+
+      <ul>
+      <% auto_load_device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :auto_load_device_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meter_type %>
+    <%= form.text_field :meter_type, id: :auto_load_device_meter_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, id: :auto_load_device_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_no %>
+    <%= form.text_field :phone_no, id: :auto_load_device_phone_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meter_id %>
+    <%= form.text_field :meter_id, id: :auto_load_device_meter_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :token_id %>
+    <%= form.text_field :token_id, id: :auto_load_device_token_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
