@@ -1,4 +1,4 @@
-# Ruby on Rails Tutorial sample application
+Buypower smartbox
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/railstutorial_sample_app_4th_ed)
 
