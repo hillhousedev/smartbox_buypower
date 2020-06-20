@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :awards
+  resources :students
+  resources :meter_tokens
   resources :tokens
   resources :auto_load_devices
   resources :viewtesters
@@ -16,6 +20,12 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+
+  resources :awards do
+  member do
+    get 'awards'
+  end
+end
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]

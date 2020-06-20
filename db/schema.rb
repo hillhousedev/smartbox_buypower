@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200322212431) do
+ActiveRecord::Schema.define(version: 20200620091933) do
 
   create_table "auto_load_devices", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,34 @@ ActiveRecord::Schema.define(version: 20200322212431) do
     t.index ["token_id"], name: "index_auto_load_devices_on_token_id"
   end
 
+  create_table "awards", force: :cascade do |t|
+    t.string "name"
+    t.integer "year"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "post_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meter_tokens", force: :cascade do |t|
+    t.string "token"
+    t.string "meter_id"
+    t.string "meter_type"
+    t.string "device_id"
+    t.string "device_sim_no"
+    t.string "device_address"
+    t.integer "auto_load_device_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auto_load_device_id"], name: "index_meter_tokens_on_auto_load_device_id"
+  end
+
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id"
@@ -31,6 +59,13 @@ ActiveRecord::Schema.define(version: 20200322212431) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -41,6 +76,15 @@ ActiveRecord::Schema.define(version: 20200322212431) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.float "gpa"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tokens", force: :cascade do |t|

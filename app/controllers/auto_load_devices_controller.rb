@@ -69,6 +69,6 @@ class AutoLoadDevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def auto_load_device_params
-      params.require(:auto_load_device).permit(:name, :meter_type, :address, :phone_no, :meter_id, :token_id)
+      params.require(:auto_load_device).permit(:name, :meter_type, :address, :phone_no, :meter_id)
     end
 end
