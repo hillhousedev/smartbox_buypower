@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  token: MyString
+  meter_id: MyString
+  meter_type: MyString
+  device_id: MyString
+  device_sim_no: MyString
+  device_address: MyString
+  auto_load_device: one
+
+two:
+  token: MyString
+  meter_id: MyString
+  meter_type: MyString
+  device_id: MyString
+  device_sim_no: MyString
+  device_address: MyString
+  auto_load_device: two
