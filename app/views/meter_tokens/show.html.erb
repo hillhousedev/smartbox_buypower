@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @meter_token.token %>
+</p>
+
+<p>
+  <strong>Meter:</strong>
+  <%= @meter_token.meter_id %>
+</p>
+
+<p>
+  <strong>Meter type:</strong>
+  <%= @meter_token.meter_type %>
+</p>
+
+<p>
+  <strong>Device:</strong>
+  <%= @meter_token.device_id %>
+</p>
+
+<p>
+  <strong>Device sim no:</strong>
+  <%= @meter_token.device_sim_no %>
+</p>
+
+<p>
+  <strong>Device address:</strong>
+  <%= @meter_token.device_address %>
+</p>
+
+<p>
+  <strong>Auto load device:</strong>
+  <%= @meter_token.auto_load_device.id%>
+</p>
+
+
+<%= link_to 'Edit', edit_meter_token_path(@meter_token) %> |
+<%= link_to 'Back', meter_tokens_path %>
+
+
+
+
+ 

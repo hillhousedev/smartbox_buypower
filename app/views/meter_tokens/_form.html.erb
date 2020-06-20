@@ -1,0 +1,52 @@
+<%= form_with(model: meter_token, local: true) do |form| %>
+  <% if meter_token.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meter_token.errors.count, "error") %> prohibited this meter_token from being saved:</h2>
+
+      <ul>
+      <% meter_token.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :token %>
+    <%= form.text_field :token, id: :meter_token_token %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meter_id %>
+    <%= form.text_field :meter_id, id: :meter_token_meter_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meter_type %>
+    <%= form.text_field :meter_type, id: :meter_token_meter_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :device_id %>
+    <%= form.text_field :device_id, id: :meter_token_device_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :device_sim_no %>
+    <%= form.text_field :device_sim_no, id: :meter_token_device_sim_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :device_address %>
+    <%= form.text_field :device_address, id: :meter_token_device_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :auto_load_device_id %>
+    <%= form.text_field :auto_load_device_id, id: :meter_token_auto_load_device_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
