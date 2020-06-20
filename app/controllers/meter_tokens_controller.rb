@@ -1,5 +1,5 @@
 class MeterTokensController < ApplicationController
-  before_action :set_meter_token, only: [:show, :edit, :update, :destroy]
+  before_action :set_meter_token, only: [:show, :edit, :update, :destroy, :smartbox_meter]
   skip_before_action :verify_authenticity_token
   # GET /meter_tokens
   # GET /meter_tokens.json
@@ -36,6 +36,20 @@ class MeterTokensController < ApplicationController
       end
     end
   end
+  
+  def smartbox_meter
+    @meter_token = MeterToken.new(meter_token_params)
+
+    respond_to do |format|
+      if @meter_token.save
+        format.html { redirect_to @meter_token, notice: 'Meter token was successfully created.' }
+        format.json { render :show, status: :created, location: @meter_token }
+      else
+        format.html { render :new }
+        format.json { render json: @meter_token.errors, status: :unprocessable_entity }
+      end
+    end
+  end 
 
   # PATCH/PUT /meter_tokens/1
   # PATCH/PUT /meter_tokens/1.json
